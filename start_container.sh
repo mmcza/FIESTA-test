@@ -34,5 +34,6 @@ docker run -it --rm \
 	--env="NVIDIA_VISIBLE_DEVICES=all" \
 	--env="NVIDIA_DRIVER_CAPABILITIES=all" \
         --network=host \
+        --ipc=host --privileged \
 	fiesta_test \
 	bash

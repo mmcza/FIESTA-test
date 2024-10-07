@@ -17,9 +17,22 @@ To start the container simply use:
 bash start_container.sh
 ```
 
-To test the proposed dataset use the following command inside `fiesta_shared`:
+To test the proposed dataset use the following command inside `fiesta_shared` (size of the file is 4.5GB):
 ```Shell
 wget http://robotics.ethz.ch/~asl-datasets/iros_2017_voxblox/data.bag
 ```
 
 # 2. Running the algorythm
+
+In first console run the demo:
+```Shell
+roslaunch fiesta cow_and_lady.launch
+```
+RVIZ should launch. In second terminal run connect to the container:
+```Shell
+docker exec -ti fiesta bash
+```
+Next, play the data from the rosbag:
+```Shell
+rosbag play data.bag
+```
