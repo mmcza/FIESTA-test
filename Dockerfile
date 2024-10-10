@@ -42,10 +42,11 @@ WORKDIR /root/catkin_ws/src
 # Clone FIESTA repository
 RUN git clone https://github.com/hlx1996/Fiesta.git
 
+# Add a dummy ARG to invalidate cache for git clone
+ARG CACHEBUST=1
 # Clone this repository to be able to run the TUM datasets
-WORKDIR /root
 RUN git clone https://github.com/mmcza/FIESTA-test.git
-RUN mv /root/FIESTA-test/transform_publisher/ /root/catkin_ws/src/
+# RUN mv /root/FIESTA-test/transform_publisher/ /root/catkin_ws/src/
 
 # Build the workspace
 WORKDIR /root/catkin_ws
